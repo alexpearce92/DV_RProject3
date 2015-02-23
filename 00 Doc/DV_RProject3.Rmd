@@ -1,0 +1,27 @@
+---
+output: html_document
+---
+Elements Of Data Visualization: Project 3,  Analysis
+===
+
+***
+
+__By Jose Cortez, Adam Hernandex, and Alex Pearce__
+
+__GitHub__: https://github.com/alexpearce92/DV_RProject3
+
+This project deals with creating interesting graphs of ???
+
+## Load necessary packages
+```{r message=FALSE}
+source("../01 Data/load_packages.R",echo=TRUE)
+```
+
+## Database Creations
+```{r message=FALSE}
+
+```
+
+***
+
+
