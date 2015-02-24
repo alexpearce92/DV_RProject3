@@ -1,7 +1,7 @@
 ---
 output: html_document
 ---
-Elements Of Data Visualization: Project 3,  Analysis
+Elements Of Data Visualization: Project 3, Sattelite Analysis
 ===
 
 ***
@@ -10,7 +10,7 @@ __By Jose Cortez, Adam Hernandex, and Alex Pearce__
 
 __GitHub__: https://github.com/alexpearce92/DV_RProject3
 
-This project deals with creating interesting graphs of ???
+This project deals with creating interesting graphs of orbitting sattelites, the data of which was gathered and compiled by [Space-Track](https://www.space-track.org).
 
 ## Load necessary packages
 ```{r message=FALSE}
