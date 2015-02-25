@@ -61,12 +61,12 @@ img {
 
 
 
-<div id="elements-of-data-visualization-project-3-analysis" class="section level1">
-<h1>Elements Of Data Visualization: Project 3, Analysis</h1>
+<div id="elements-of-data-visualization-project-3-sattelite-analysis" class="section level1">
+<h1>Elements Of Data Visualization: Project 3, Sattelite Analysis</h1>
 <hr />
 <p><strong>By Jose Cortez, Adam Hernandex, and Alex Pearce</strong></p>
 <p><strong>GitHub</strong>: <a href="https://github.com/alexpearce92/DV_RProject3">https://github.com/alexpearce92/DV_RProject3</a></p>
-<p>This project deals with creating interesting graphs of ???</p>
+<p>This project deals with creating interesting graphs of orbitting sattelites, the data of which was gathered and compiled by <a href="https://www.space-track.org">Space-Track</a>. Included are three datasets that were joined to form a single large data frame: satellite payload, satellite launch information, and satellite national origin.</p>
 <div id="load-necessary-packages" class="section level2">
 <h2>Load necessary packages</h2>
 <pre class="r"><code>source(&quot;../01 Data/load_packages.R&quot;,echo=TRUE)</code></pre>
@@ -83,10 +83,33 @@ img {
 ## 
 ## &gt; library(&quot;reshape2&quot;)
 ## 
-## &gt; library(&quot;dplyr&quot;)</code></pre>
+## &gt; library(&quot;dplyr&quot;)
+## 
+## &gt; library(&quot;jsonlite&quot;)</code></pre>
 </div>
 <div id="database-creations" class="section level2">
 <h2>Database Creations</h2>
+<pre class="r"><code>source(&quot;../01 Data/create_df.R&quot;,echo=TRUE)</code></pre>
+<pre><code>## 
+## &gt; Satellites.df &lt;- data.frame(fromJSON(getURL(URLencode(&quot;129.152.144.84:5001/rest/native/?query=\&quot;select o.SATNAME, o.COUNTRY, i.*, l.LAUNCH, l.SITE,  .... [TRUNCATED] 
+## 
+## &gt; tbl_df(Satellites.df)
+## Source: local data frame [4,819 x 13]
+## 
+##               SATNAME COUNTRY NORAD_CAT_ID          SATNAME.1 OBJECT_TYPE
+## 1            AAM/PSLV     IND        31136           AAM/PSLV     PAYLOAD
+## 2    AAUSAT CUBESAT 2     DEN        32788   AAUSAT CUBESAT 2     PAYLOAD
+## 3  ABS 7 (KOREASAT 3)    SKOR        25894 ABS 7 (KOREASAT 3)     PAYLOAD
+## 4            ACRIMSAT      US        26033           ACRIMSAT     PAYLOAD
+## 5                ACTS      US        22796               ACTS     PAYLOAD
+## 6               ADEOS     JPN        24277              ADEOS     PAYLOAD
+## 7    AEHF 2 (USA 235)      US        38254   AEHF 2 (USA 235)     PAYLOAD
+## 8              AENEAS      US        38760             AENEAS     PAYLOAD
+## 9          AEROCUBE 2      US        31133         AEROCUBE 2     PAYLOAD
+## 10         AEROCUBE 4      US        38769         AEROCUBE 4     PAYLOAD
+## ..                ...     ...          ...                ...         ...
+## Variables not shown: OBJECT_NAME (fctr), LAUNCH (fctr), SITE (fctr), DECAY
+##   (fctr), PERIOD (fctr), INCLINATION (fctr), APOGEE (fctr), PERIGEE (fctr)</code></pre>
 <hr />
 </div>
 </div>
