@@ -87,29 +87,68 @@ img {
 ## 
 ## &gt; library(&quot;jsonlite&quot;)</code></pre>
 </div>
-<div id="database-creations" class="section level2">
-<h2>Database Creations</h2>
+<div id="dataframe-creations" class="section level2">
+<h2>Dataframe Creations</h2>
 <pre class="r"><code>source(&quot;../01 Data/create_df.R&quot;,echo=TRUE)</code></pre>
 <pre><code>## 
-## &gt; Satellites.df &lt;- data.frame(fromJSON(getURL(URLencode(&quot;129.152.144.84:5001/rest/native/?query=\&quot;select o.SATNAME, o.COUNTRY, i.*, l.LAUNCH, l.SITE,  .... [TRUNCATED] 
+## &gt; SatInfo.df &lt;- data.frame(fromJSON(getURL(URLencode(&quot;129.152.144.84:5001/rest/native/?query=\&quot;select * from sat_info\&quot;&quot;), 
+## +     httpheader = c(DB =  .... [TRUNCATED] 
 ## 
-## &gt; tbl_df(Satellites.df)
-## Source: local data frame [4,819 x 13]
+## &gt; SatOrigin.df &lt;- data.frame(fromJSON(getURL(URLencode(&quot;129.152.144.84:5001/rest/native/?query=\&quot;select * from sat_origins\&quot;&quot;), 
+## +     httpheader = c( .... [TRUNCATED] 
 ## 
-##               SATNAME COUNTRY NORAD_CAT_ID          SATNAME.1 OBJECT_TYPE
-## 1            AAM/PSLV     IND        31136           AAM/PSLV     PAYLOAD
-## 2    AAUSAT CUBESAT 2     DEN        32788   AAUSAT CUBESAT 2     PAYLOAD
-## 3  ABS 7 (KOREASAT 3)    SKOR        25894 ABS 7 (KOREASAT 3)     PAYLOAD
-## 4            ACRIMSAT      US        26033           ACRIMSAT     PAYLOAD
-## 5                ACTS      US        22796               ACTS     PAYLOAD
-## 6               ADEOS     JPN        24277              ADEOS     PAYLOAD
-## 7    AEHF 2 (USA 235)      US        38254   AEHF 2 (USA 235)     PAYLOAD
-## 8              AENEAS      US        38760             AENEAS     PAYLOAD
-## 9          AEROCUBE 2      US        31133         AEROCUBE 2     PAYLOAD
-## 10         AEROCUBE 4      US        38769         AEROCUBE 4     PAYLOAD
-## ..                ...     ...          ...                ...         ...
-## Variables not shown: OBJECT_NAME (fctr), LAUNCH (fctr), SITE (fctr), DECAY
-##   (fctr), PERIOD (fctr), INCLINATION (fctr), APOGEE (fctr), PERIGEE (fctr)</code></pre>
+## &gt; SatLaunch.df &lt;- data.frame(fromJSON(getURL(URLencode(&quot;129.152.144.84:5001/rest/native/?query=\&quot;select * from sat_launch\&quot;&quot;), 
+## +     httpheader = c(D .... [TRUNCATED] 
+## 
+## &gt; tbl_df(SatInfo.df)
+## Source: local data frame [3,840 x 4]
+## 
+##    NORAD_CAT_ID        SATNAME OBJECT_TYPE    OBJECT_NAME
+## 1         40098       SL-4 R/B ROCKET BODY       SL-4 R/B
+## 2         40097 PROGRESS-M 24M     PAYLOAD PROGRESS-M 24M
+## 3         40095       FOTON M4     PAYLOAD       FOTON M4
+## 4         40096       SL-4 R/B ROCKET BODY       SL-4 R/B
+## 5         40150   FOTON M4 DEB      DEBRIS   FOTON M4 DEB
+## 6         40151   FOTON M4 DEB      DEBRIS   FOTON M4 DEB
+## 7         40086 ORBCOMM FM 109     PAYLOAD ORBCOMM FM 109
+## 8         40087 ORBCOMM FM 107     PAYLOAD ORBCOMM FM 107
+## 9         40088 ORBCOMM FM 106     PAYLOAD ORBCOMM FM 106
+## 10        40089 ORBCOMM FM 111     PAYLOAD ORBCOMM FM 111
+## ..          ...            ...         ...            ...
+## 
+## &gt; tbl_df(SatOrigin.df)
+## Source: local data frame [3,840 x 3]
+## 
+##    NORAD_CAT_ID        SATNAME COUNTRY
+## 1         40098       SL-4 R/B     CIS
+## 2         40097 PROGRESS-M 24M     CIS
+## 3         40095       FOTON M4     CIS
+## 4         40096       SL-4 R/B     CIS
+## 5         40150   FOTON M4 DEB     CIS
+## 6         40151   FOTON M4 DEB     CIS
+## 7         40086 ORBCOMM FM 109      US
+## 8         40087 ORBCOMM FM 107      US
+## 9         40088 ORBCOMM FM 106      US
+## 10        40089 ORBCOMM FM 111      US
+## ..          ...            ...     ...
+## 
+## &gt; tbl_df(SatLaunch.df)
+## Source: local data frame [4,395 x 9]
+## 
+##    NORAD_CAT_ID    LAUNCH  SITE     DECAY           PERIOD
+## 1         39018 27-NOV-12   XSC 22-APR-13  101.76000213623
+## 2         39011 25-NOV-12   JSC      null 107.050003051758
+## 3         39014 25-NOV-12   JSC      null 105.099998474121
+## 4         39012 25-NOV-12   JSC      null 107.050003051758
+## 5         39013 25-NOV-12   JSC      null 107.050003051758
+## 6         39015 25-NOV-12   JSC      null 107.139999389648
+## 7         39016 25-NOV-12   JSC      null 107.110000610352
+## 8         39009 20-NOV-12 TTMTR      null 645.570007324219
+## 9         39008 20-NOV-12 TTMTR      null 1436.09997558594
+## 10        39010 20-NOV-12 TTMTR      null 235.710006713867
+## ..          ...       ...   ...       ...              ...
+## Variables not shown: INCLINATION (fctr), APOGEE (fctr), PERIGEE (fctr),
+##   IN_ORBIT (fctr)</code></pre>
 <hr />
 </div>
 </div>

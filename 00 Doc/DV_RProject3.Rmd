@@ -17,7 +17,7 @@ This project deals with creating interesting graphs of orbitting sattelites, the
 source("../01 Data/load_packages.R",echo=TRUE)
 ```
 
-## Database Creations
+## Dataframe Creations
 ```{r message=FALSE}
 source("../01 Data/create_df.R",echo=TRUE)
 ```
