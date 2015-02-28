@@ -10,7 +10,7 @@ __By Jose Cortez, Adam Hernandex, and Alex Pearce__
 
 __GitHub__: https://github.com/alexpearce92/DV_RProject3
 
-This project deals with creating interesting graphs of orbitting sattelites, the data of which was gathered and compiled by [Space-Track](https://www.space-track.org). Included are three datasets that were joined to form a single large data frame: satellite payload, satellite launch information, and satellite national origin.
+This project deals with creating interesting graphs concerning climactic weather in the US in 2010, the data of which was gathered and compiled by [Enigma](https://app.enigma.io/search/source/us.gov.noaa.ncdc.stormevents). Included are three datasets that were joined to form a single large data frame: satellite payload, satellite launch information, and satellite national origin.
 
 ## Load necessary packages
 ```{r message=FALSE}
