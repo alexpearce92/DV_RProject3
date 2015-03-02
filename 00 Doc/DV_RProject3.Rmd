@@ -10,7 +10,7 @@ __By Jose Cortez, Adam Hernandex, and Alex Pearce__
 
 __GitHub__: https://github.com/alexpearce92/DV_RProject3
 
-This project deals with creating interesting graphs concerning climactic weather in the US in 2010, the data of which was gathered and compiled by [Enigma](https://app.enigma.io/search/source/us.gov.noaa.ncdc.stormevents). Included are three datasets that were joined to form a single large data frame: satellite payload, satellite launch information, and satellite national origin.
+This project deals with creating interesting graphs concerning climactic weather in the US from 2000 to 2010, the data of which was gathered and compiled by [Enigma](https://app.enigma.io/search/source/us.gov.noaa.ncdc.stormevents). Included are three datasets: StormMeta.df (meta information), StormPath.df (path the storm took), and StormImpact.df (property damage, deaths, and injuries.
 
 ## Load necessary packages
 ```{r message=FALSE}
@@ -18,10 +18,32 @@ source("../01 Data/load_packages.R",echo=TRUE)
 ```
 
 ## Dataframe Creations
+
+Please note that loading the data frames may take a few minutes as each of the three contain over 600,000 records!
 ```{r message=FALSE}
 source("../01 Data/create_df.R",echo=TRUE)
 ```
 
 ***
+## Plotting the destruction of each type of storm
 
+Here we will join two datasets so that we may determine the destructive damage of each type of storm over time.
 
+## Create the data set
+```{r message=FALSE}
+source("../02 Data Wrangling/impact_per_year.R", echo=TRUE)
+```
+
+## Plot each storm's deaths and injuries
+
+Below we see plots of each storms deaths and injuries each year. According to the dataset, the deadliest storm was a heat wave in 2006. Injuries, however, have large spikes in excessive heat (2007), heat (2006), hyrricane/typhoons (2008) and tornado (2008) storms. Although hurricane Katrina has the highest casualty count in US history of any storm, this data is missing from the 2005 data set provided by Enigma. 
+```{r message=FALSE, fig.width=12, fig.height=25}
+source("../03 Visualizations/deaths_per_year_plot.R", echo=TRUE)
+```
+
+Here we compare the damage to property and crops of each storm. Note that damage is measured in millions of US dollars. According to the plots below, it appears that the most devastating storms for property and crops were floods (2006), followed by Hurricanes and Storm Surges (2005). Like we found above, much of the data from Hurricane Katrina is missing from this data set, which is why the 2005 event in hurricanes is not dwarfing that of the 2006 flood.
+```{r message=FALSE, fig.width=12, fig.height=25}
+source("../03 Visualizations/damage_per_year_plot.R", echo=TRUE)
+```
+
+***
