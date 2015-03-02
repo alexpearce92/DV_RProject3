@@ -64,16 +64,16 @@ We will now generate a characterization of the categorical columns represented i
 source("../01 Data/create_categorials.R",echo=TRUE)
 ```
 
-## Create characterization for each table
+## Create characterization and generate png file for each table
 ```{r message=FALSE}
 source("../02 Data Wrangling/storm_impact_categoricals.R",echo=TRUE)
 source("../02 Data Wrangling/storm_meta_categoricals.R",echo=TRUE)
 source("../02 Data Wrangling/storm_path_categoricals.R",echo=TRUE)
 ```
 
-## Generate png files for each set of plots
-```{r message=FALSE}
-source("../03 Visualizations/storm_impact_create_png.R",echo=TRUE)
-source("../03 Visualizations/storm_meta_create_png.R",echo=TRUE)
-source("../03 Visualizations/storm_path_create_png.R",echo=TRUE)
-```
+## And here are the plots (note that StormImpact did not have any categorical columns)
+
+###StormPath Categoricals
+![](./00 Doc/StormPathCategoricals.png)
+###StormMeta Categoricals
+![](./00 Doc/StormMetaCategoricals.png)
