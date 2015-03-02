@@ -10,7 +10,7 @@ __By Jose Cortez, Adam Hernandex, and Alex Pearce__
 
 __GitHub__: https://github.com/alexpearce92/DV_RProject3
 
-This project deals with creating interesting graphs concerning climactic weather in the US from 2000 to 2010, the data of which was gathered and compiled by [Enigma](https://app.enigma.io/search/source/us.gov.noaa.ncdc.stormevents). Included are three datasets: StormMeta.df (meta information), StormPath.df (path the storm took), and StormImpact.df (property damage, deaths, and injuries.
+This project deals with creating interesting graphs concerning climactic weather in the US in 2010, the data of which was gathered and compiled by [Enigma](https://app.enigma.io/search/source/us.gov.noaa.ncdc.stormevents). Included are three datasets that were joined to form a single large data frame: satellite payload, satellite launch information, and satellite national origin.
 
 ## Load necessary packages
 ```{r message=FALSE}
@@ -18,18 +18,17 @@ source("../01 Data/load_packages.R",echo=TRUE)
 ```
 
 ## Dataframe Creations
-
-Please note that loading the data frames may take a few minutes as each of the three contain over 600,000 records!
 ```{r message=FALSE}
 source("../01 Data/create_df.R",echo=TRUE)
 ```
 
 ***
+
 ## Plotting the destruction of each type of storm
 
 Here we will join two datasets so that we may determine the destructive damage of each type of storm over time.
 
-## Create the data set
+## Create the data set using an outer join
 ```{r message=FALSE}
 source("../02 Data Wrangling/impact_per_year.R", echo=TRUE)
 ```
@@ -47,3 +46,34 @@ source("../03 Visualizations/damage_per_year_plot.R", echo=TRUE)
 ```
 
 ***
+
+Adams stuff
+
+***
+
+Cortez's stuff
+
+***
+
+# Categorical Statistics
+
+We will now generate a characterization of the categorical columns represented in the tables
+
+## Generate lists of categorical and numerical columns
+```{r message=FALSE}
+source("../01 Data/create_categorials.R",echo=TRUE)
+```
+
+## Create characterization for each table
+```{r message=FALSE}
+source("../02 Data Wrangling/storm_impact_categoricals.R",echo=TRUE)
+source("../02 Data Wrangling/storm_meta_categoricals.R",echo=TRUE)
+source("../02 Data Wrangling/storm_path_categoricals.R",echo=TRUE)
+```
+
+## Generate png files for each set of plots
+```{r message=FALSE}
+source("../03 Visualizations/storm_impact_create_png.R",echo=TRUE)
+source("../03 Visualizations/storm_meta_create_png.R",echo=TRUE)
+source("../03 Visualizations/storm_path_create_png.R",echo=TRUE)
+```
