@@ -2,7 +2,7 @@
 
 myplot <- function(df, x) {
   names(df) <- c("x")
-  ggplot(df, aes(x=x), na.rm = TRUE) + geom_histogram() + scale_x_discrete(x) + theme (axis.text.x = element_text(size=6, angle=90, vjust=0.5)) + labs(title=paste("Categorical Plot - ", x)) + theme(plot.title = element_text(size=20, face="bold", vjust=1, family="Times"))
+  ggplot(df, aes(x=x), na.rm = TRUE) + geom_histogram() + scale_x_discrete(x) + theme (axis.text.x = element_text(size=6, angle=90, vjust=0.5)) + labs(title=paste("Categorical Plot - ", x)) + theme(plot.title = element_text(size=40, face="bold", vjust=1, family="Times"))
 }
 
 StormImpactPlotList <- list()

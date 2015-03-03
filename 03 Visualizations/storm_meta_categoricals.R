@@ -2,7 +2,7 @@
 
 myplot <- function(df, x) {
   names(df) <- c("x")
-  ggplot(df, aes(x=x), na.rm = TRUE) + geom_histogram() + scale_x_discrete(x) + theme (axis.text.x = element_text(size=3, angle=90, vjust=0.5)) + labs(title=paste("Categorical Plot - ", x)) + theme(plot.title = element_text(size=40, face="bold", vjust=1, family="Times"))
+  ggplot(df, aes(x=x), na.rm = TRUE) + geom_histogram() + scale_x_discrete(x) + theme (axis.text.x = element_text(size=3, angle=90, vjust=0.5)) + labs(title=paste("Categorical Plot - ", x)) + theme(plot.title = element_text(size=20, face="bold", vjust=1, family="Times"))
 }
 
 StormMetaPlotList <- list()
@@ -17,19 +17,14 @@ for (i in names(StormMeta.df)) {
 
 # Create png for StormMeta categorical plots
 if (length(StormMetaPlotList) > 0) {
-  png("../00 Doc/StormMetaCategoricals.png", width = 35, height = 50, units = "in", res = 72)
+  png("../00 Doc/StormMetaCategoricals.png", width = 50, height = 30, units = "in", res = 72)
   grid.newpage() 
   
-  row <- 1
-  colMax <- 5
-  rowMax <- 4
-  
-  pushViewport(viewport(layout = grid.layout(rowMax, colMax), width = 1, height = 1.5))   
-  
-  for (i in StormMetaPlotList){
-    print(i, vp = viewport(layout.pos.row = row, layout.pos.col = 1:5))
-    row <- row + 1
-  }
+  pushViewport(viewport(layout = grid.layout(2, 6)))   
+  print(StormMetaPlotList[[1]], vp = viewport(layout.pos.row = 1, layout.pos.col = 1:6))
+  print(StormMetaPlotList[[2]], vp = viewport(layout.pos.row = 2, layout.pos.col = 1:2))
+  print(StormMetaPlotList[[3]], vp = viewport(layout.pos.row = 2, layout.pos.col = 3:4))
+  print(StormMetaPlotList[[4]], vp = viewport(layout.pos.row = 2, layout.pos.col = 5:6))
   
   dev.off()
 }

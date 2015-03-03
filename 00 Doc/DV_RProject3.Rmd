@@ -77,5 +77,6 @@ source("../03 Visualizations/storm_path_categoricals.R",echo=TRUE)
 
 ### StormPath Categoricals
 ![](./StormPathCategoricals.png)
+
 ### StormMeta Categoricals
 ![](./StormMetaCategoricals.png)
