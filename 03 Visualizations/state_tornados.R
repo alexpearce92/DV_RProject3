@@ -1,0 +1,2 @@
+library(scales)
+tornados.df %>% ggplot(aes(x=Date, y=log(Cost), color= Injuries, size=Deaths)) + scale_color_gradient2(low="white", high="black") + geom_point() + scale_x_date(labels = date_format("%b/%Y"), breaks = "2 year", minor_breaks = "4 month") + scale_y_continuous(trans=log10_trans()) + ylab("Log Of Cost of Destruction in Dollars") + ggtitle("Cost Vs. Time")
