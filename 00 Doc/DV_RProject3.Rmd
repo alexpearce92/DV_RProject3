@@ -46,8 +46,17 @@ source("../03 Visualizations/damage_per_year_plot.R", echo=TRUE)
 ```
 
 ***
+##Torando Analysis:
 
-Adams stuff
+##Data Wrangling with an inner-join:
+```{r message=FALSE}
+source("../02 Data Wrangling/tornados.R", echo=TRUE)
+```
+
+##Graphs:
+```{r message=FALSE, fig.width=12, fig.height=25}
+source("../03 Visualizations/state_tornados.R", echo=TRUE)
+```
 
 ***
 
