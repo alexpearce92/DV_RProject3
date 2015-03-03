@@ -46,11 +46,11 @@ source("../03 Visualizations/damage_per_year_plot.R", echo=TRUE)
 ```
 
 ***
-## Torando Analysis:
+## Torando Analysis
 
 Next, we'll take a look at the destructive cost and lethality of tornados.
 
-## Data Wrangling with an inner-join:
+## Data Wrangling with an inner-join
 
 We will perform an inner join so that we can plot the destructive cost, deaths, and the date of each storm.
 
@@ -58,7 +58,7 @@ We will perform an inner join so that we can plot the destructive cost, deaths, 
 source("../02 Data Wrangling/tornados.R", echo=TRUE)
 ```
 
-## Visualization:
+## Visualization
 
 From 2000-2011, there were numerous tornadoes that produced few injuries or deaths; however, many of these tornadoes created a large amount of damage to property and crops. Among the most costly storms in terms of damage, the most deaths and injuries also occured.
 
@@ -69,6 +69,19 @@ source("../03 Visualizations/state_tornados.R", echo=TRUE)
 ***
 
 Cortez's stuff
+
+## Data Wrangling
+
+We will perform an inner join so that we can plot the destructive cost, deaths, and the date of each storm.
+
+```{r message=FALSE}
+```
+
+## Visualization:
+
+```{r message=FALSE, fig.width=12, fig.height=10}
+```
+
 
 ***
 
