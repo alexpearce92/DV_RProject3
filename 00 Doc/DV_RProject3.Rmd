@@ -66,6 +66,10 @@ From 2000-2011, there were numerous tornadoes that produced few injuries or deat
 source("../03 Visualizations/state_tornados.R", echo=TRUE)
 ```
 
+Desctruction during Spring is the greatest as expected, yet the winters of 2000 - 2011 seemed to be particularly deadly. 
+```{r message=FALSE, fig.width=12, fig.height=10}
+source("../03 Visualizations/state_tornados.R", echo=TRUE)
+```
 ***
 
 Cortez's stuff
