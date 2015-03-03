@@ -26,7 +26,7 @@ source("../01 Data/create_df.R",echo=TRUE)
 
 ## Plotting the destruction of each type of storm
 
-Here we will join two datasets so that we may determine the destructive damage of each type of storm over time.
+Here we will perform a left outer join of two datasets so that we may determine the destructive damage of each type of storm over time.
 
 ## Create the data set using an outer join
 ```{r message=FALSE}
@@ -46,15 +46,23 @@ source("../03 Visualizations/damage_per_year_plot.R", echo=TRUE)
 ```
 
 ***
-##Torando Analysis:
+## Torando Analysis:
 
-##Data Wrangling with an inner-join:
+Next, we'll take a look at the destructive cost and lethality of tornados.
+
+## Data Wrangling with an inner-join:
+
+We will perform an inner join so that we can plot the destructive cost, deaths, and the date of each storm.
+
 ```{r message=FALSE}
 source("../02 Data Wrangling/tornados.R", echo=TRUE)
 ```
 
-##Graphs:
-```{r message=FALSE, fig.width=12, fig.height=25}
+## Visualization:
+
+From 2000-2011, there were numerous tornadoes that produced few injuries or deaths; however, many of these tornadoes created a large amount of damage to property and crops. Among the most costly storms in terms of damage, the most deaths and injuries also occured.
+
+```{r message=FALSE, fig.width=12, fig.height=10}
 source("../03 Visualizations/state_tornados.R", echo=TRUE)
 ```
 
