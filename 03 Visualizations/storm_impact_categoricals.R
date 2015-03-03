@@ -2,7 +2,7 @@
 
 myplot <- function(df, x) {
   names(df) <- c("x")
-  ggplot(df, aes(x=x)) + geom_histogram() + scale_x_discrete(x) + theme (axis.text.x = element_text(size=6, angle=90, vjust=0.5))
+  ggplot(df, aes(x=x)) + geom_histogram() + scale_x_discrete(x) + theme (axis.text.x = element_text(size=6, angle=90, vjust=0.5)) + labs(title=paste("Categorical Plot - ", x)) + theme(plot.title = element_text(size=20, face="bold", vjust=1, family="Bauhaus93"))
 }
 
 StormImpactPlotList <- list()
@@ -16,20 +16,20 @@ for (i in names(StormImpact.df)) {
 }
 
 # Create png for StormImpact categorical plots
-
-png("../00 Doc/StormImpactCategoricals.png", width = 12, height = 10, units = "in", res = 72)
-grid.newpage()
-pushViewport(viewport(layout = grid.layout(2, 6)))   
-
-col <- 1
-row <- 1
-for (i in StormImpactPlotList){
-  print(i, vp = viewport(layout.pos.row = row, layout.pos.col = col:col+2))
-  col <- col + 3
-  if (col >= 6){
-    col <- 1
+if (length(StormImpactPlotList) > 0) {
+  png("./00 Doc/StormImpactCategoricals.png", width = 35, height = 50, units = "in", res = 72)
+  grid.newpage()
+  
+  row <- 1
+  colMax <- 5
+  rowMax <- 4
+  
+  pushViewport(viewport(layout = grid.layout(rowMax, colMax), width = 1))   
+  
+  for (i in StormImpactPlotList){
+    print(i, vp = viewport(layout.pos.row = row, layout.pos.col = 1:5))
     row <- row + 1
   }
+  
+  dev.off()
 }
-
-dev.off()
