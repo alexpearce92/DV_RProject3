@@ -2,7 +2,7 @@
 
 myplot <- function(df, x) {
   names(df) <- c("x")
-  ggplot(df, aes(x=x)) + geom_histogram(na.rm = TRUE) + scale_x_discrete(x) + theme (axis.text.x = element_text(size=6, angle=90, vjust=0.5)) + labs(title=paste("Categorical Plot - ", x)) + theme(plot.title = element_text(size=20, face="bold", vjust=1, family="Times"))
+  ggplot(df, aes(x=x)) + geom_histogram(na.rm = TRUE) + scale_x_discrete(x) + theme (axis.text.x = element_text(size=6, angle=90, vjust=0.5)) + labs(title=paste("Categorical Plot - ", x)) + theme(plot.title = element_text(size=40, face="bold", vjust=1, family="Times"))
 }
 
 StormImpactPlotList <- list()
@@ -16,29 +16,11 @@ for (i in names(StormImpact.df)) {
 }
 
 # Create png for StormImpact categorical plots
+
 if (length(StormImpactPlotList) > 0) {
   png("../00 Doc/StormImpactCategoricals.png", width = 35, height = 50, units = "in", res = 72)
   grid.newpage()
-  row <- 1
-  col <- 1
-  interval <- 1
-  colMax <- 4
-  rowMax <- 2
-  firstPlotLarge <- FALSE
-  pushViewport(viewport(layout = grid.layout(rowMax, colMax)))   
-  for (i in StormImpactPlotList){
-    if (firstPlotLarge == TRUE){
-      print(i, vp = viewport(layout.pos.row = row, layout.pos.col = col:colMax))
-      firstPlotLarge == FALSE
-    } else {
-      print(i, vp = viewport(layout.pos.row = row, layout.pos.col = col:col + interval))
-    }
-    col <- col + interval + 1
-    if (col >= colMax | col + interval >= colMax) {
-      row <- row + 1
-      col <- 1
-    }  
-  }
-  
+  pushViewport(viewport(layout = grid.layout(2, 6)))   
+  print(StormImpactPlotList[[1]], vp = viewport(layout.pos.row = 1, layout.pos.col = 1:6))
   dev.off()
 }
