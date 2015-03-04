@@ -2,7 +2,8 @@
 
 myplot <- function(df, x) {
   names(df) <- c("x")
-  ggplot(df, aes(x=x)) + geom_histogram(na.rm = TRUE) + scale_x_discrete(x) + theme (axis.text.x = element_text(size=3, angle=90, vjust=0.5)) + labs(title=paste("Categorical Plot - ", x)) + theme(plot.title = element_text(size=40, face="bold", vjust=1, family="Times"))
+  p <- ggplot(df, aes(x=x)) + geom_histogram(na.rm = TRUE) + scale_x_discrete(x) + theme(axis.text.x = element_text(size=6, angle=90, vjust=0.5), axis.title.x = element_text(size=20)) + labs(title=paste("Categorical Plot - ", x)) + theme(plot.title = element_text(size=40, face="bold", vjust=1, family="Times")) 
+  p
 }
 
 StormMetaPlotList <- list()
