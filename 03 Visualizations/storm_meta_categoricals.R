@@ -26,7 +26,7 @@ if (length(StormMetaPlotList) > 0) {
   rowMax <- 2
   firstPlotLarge <- TRUE
   pushViewport(viewport(layout = grid.layout(rowMax, colMax)))   
-  for (i in StormImpactPlotList){
+  for (i in StormMetaPlotList){
     if (firstPlotLarge == TRUE){
       print(i, vp = viewport(layout.pos.row = row, layout.pos.col = col:colMax))
       firstPlotLarge == FALSE
