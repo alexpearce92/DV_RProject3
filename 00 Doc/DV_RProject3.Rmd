@@ -1,7 +1,7 @@
 ---
 output: html_document
 ---
-Elements Of Data Visualization: Project 3, Sattelite Analysis
+Elements Of Data Visualization: Project 3, Storm Analysis
 ===
 
 ***
