@@ -24,7 +24,7 @@ source("../01 Data/create_df.R",echo=TRUE)
 
 ***
 
-## Plotting the destruction of each type of storm
+# Plotting the destruction of each type of storm
 
 Here we will perform a left outer join of two datasets so that we may determine the destructive damage of each type of storm over time.
 
@@ -46,7 +46,7 @@ source("../03 Visualizations/damage_per_year_plot.R", echo=TRUE)
 ```
 
 ***
-## Torando Analysis
+# Torando Analysis
 
 Next, we'll take a look at the destructive cost and lethality of tornados.
 
@@ -72,7 +72,7 @@ source("../03 Visualizations/season_tornados.R", echo=TRUE)
 ```
 ***
 
-## Individual State Analysis
+# Individual State Analysis
 
 To study individual states we built a new dataframe via select statements on the original dataframes and combined the results with the bind_rows operation. We chose to study Texas, California, and Florida and the weather events that took place in each of these states. The new dataframe and the code written to build it is shown below:
 
@@ -114,13 +114,23 @@ source("../03 Visualizations/storm_path_categoricals.R",echo=TRUE)
 
 ## And here are the png files that we created
 
-### StormPath Categoricals
+## StormPath
+
+### Measurables
 ![](./StormPathMeasurables.png)
+
+### Categoricals
 ![](./StormPathCategoricals.png)
 
-### StormMeta Categoricals
+## StormMeta
+
+### Measurables
 ![](./StormMetaMeasurables.png)
+
+### Categoricals
 ![](./StormMetaCategoricals.png)
 
-### StormImpact Categoricals
+### StormImpact
+
+### Measurables
 ![](./StormImpactMeasurables.png)

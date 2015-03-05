@@ -2,14 +2,16 @@
 
 plotHistogram <- function(df, x) {
   names(df) <- c("x")
-  p <- ggplot(df, aes(x=x)) + geom_histogram(na.rm = TRUE) + scale_x_continuous(x) + theme(axis.text.x = element_text(size=7, angle=90, vjust=0.5), axis.text.y = element_text(size=10, vjust=0.5), axis.title.x = element_text(size=10), axis.title.y = element_text(size=10), plot.title = element_text(size=15, face="bold", vjust=1, family="Times")) + labs(title=paste("Measure Plot - ", x))
+  p <- ggplot(df, aes(x=x)) + geom_histogram(na.rm = TRUE) + scale_x_continuous(x) + theme(axis.text.x = element_text(size=7, angle=90, hjust=1), axis.text.y = element_text(size=10, vjust=0.5), axis.title.x = element_text(size=10), axis.title.y = element_text(size=10), plot.title = element_text(size=15, face="bold", vjust=1, family="Times")) + labs(title=paste("Measure Plot - ", x))
   p
 }
 
 plotPoint <- function (df, x) {
-  g <- names(df)
   names(df) <- c("x", "n")
-  p <- ggplot(df, aes(x=x, y=n)) + geom_point() + scale_x_discrete(x) + labs(title=paste("Categorical Plot - ", x)) + theme(axis.text.x = element_text(size=7, angle=90, vjust=0.5),  axis.text.y = element_text(size=10, vjust=0.5), axis.title.x = element_text(size=10), axis.title.y = element_text(size=10), plot.title = element_text(size=15, face="bold", vjust=1, family="Times"))
+  p <- ggplot(df, aes(x=x, y=n)) + geom_point() + scale_x_discrete(x, labels = abbreviate) + labs(title=paste("Categorical Plot - ", x)) + theme(axis.text.x = element_text(size=7, angle=90, hjust=1),  axis.text.y = element_text(size=10, vjust=0.5), axis.title.x = element_text(size=10), axis.title.y = element_text(size=10), plot.title = element_text(size=15, face="bold", vjust=1, family="Times"))
+  if (x == "CZ_NAME"){
+    p <- p + theme(axis.text.x = element_text(size=2, vjust=0.5))
+  }
   p
 }
 
