@@ -72,20 +72,25 @@ source("../03 Visualizations/season_tornados.R", echo=TRUE)
 ```
 ***
 
-Cortez's stuff
+## Individual State Analysis
 
-## Data Wrangling
-
-We will perform an inner join so that we can plot the destructive cost, deaths, and the date of each storm.
+To study individual states we built a new dataframe via select statements on the original dataframes and combined the results with the bind_rows operation. We chose to study Texas, California, and Florida and the weather events that took place in each of these states. The new dataframe and the code written to build it is shown below:
 
 ```{r message=FALSE}
+source("../02 Data Wrangling/state.R",echo=TRUE)
 ```
 
-## Visualization:
+## Individual State Visualizations
+
+We have produced two plots: one which shows the number of occurrences of each weather event for each state where there are less than 1000 occurrences, and another where there are more than 1000 occurrences. It can be seen that purely in terms of weather occurrences, Texas had the most.
 
 ```{r message=FALSE, fig.width=12, fig.height=10}
+source("../03 Visualizations/state_plot_under.R", echo=TRUE)
 ```
 
+```{r message=FALSE, fig.width=12, fig.height=10}
+source("../03 Visualizations/state_plot_over.R", echo=TRUE)
+```
 
 ***
 
