@@ -37,27 +37,27 @@ for (i in names(StormPath.df)) {
 
 # Create png for StormPath plots
 if (length(StormPathPointPlotList) > 0) {
-  png("./00 Doc/StormPathCategoricals.png", width = 25, height = 25, units = "in", res = 72)
+  png("../00 Doc/StormPathCategoricals.png", width = 25, height = 25, units = "in", res = 72)
   grid.newpage()
   pushViewport(viewport(layout = grid.layout(2, 6)))   
   print(StormPathPointPlotList[[1]], vp = viewport(layout.pos.row = 1, layout.pos.col = 1:3))
   print(StormPathPointPlotList[[2]], vp = viewport(layout.pos.row = 1, layout.pos.col = 4:6))
-  print(StormPathPointPlotList[[3]], vp = viewport(layout.pos.row = 2, layout.pos.col = 1:2))
-  print(StormPathPointPlotList[[4]], vp = viewport(layout.pos.row = 2, layout.pos.col = 3:4))
-  print(StormPathPointPlotList[[5]], vp = viewport(layout.pos.row = 2, layout.pos.col = 5:6))
+  print(StormPathPointPlotList[[3]], vp = viewport(layout.pos.row = 2, layout.pos.col = 1:3))
+  print(StormPathPointPlotList[[4]], vp = viewport(layout.pos.row = 2, layout.pos.col = 4:6))
   dev.off()
 }
 
 if (length(StormPathHistPlotList) > 0){
-  png("./00 Doc/StormPathMeasurables.png", width = 15, height = 25, units = "in", res = 72)
+  png("../00 Doc/StormPathMeasurables.png", width = 15, height = 25, units = "in", res = 72)
   grid.newpage()
   pushViewport(viewport(layout = grid.layout(4, 6)))   
-  print(StormPathHistPlotList[[1]], vp = viewport(layout.pos.row = 1, layout.pos.col = 1:6))
-  print(StormPathHistPlotList[[2]], vp = viewport(layout.pos.row = 2, layout.pos.col = 1:3))
-  print(StormPathHistPlotList[[3]], vp = viewport(layout.pos.row = 2, layout.pos.col = 4:6))
-  print(StormPathHistPlotList[[4]], vp = viewport(layout.pos.row = 3, layout.pos.col = 1:3))
-  print(StormPathHistPlotList[[5]], vp = viewport(layout.pos.row = 3, layout.pos.col = 4:6))
-  print(StormPathHistPlotList[[6]], vp = viewport(layout.pos.row = 4, layout.pos.col = 1:3))
-  print(StormPathHistPlotList[[7]], vp = viewport(layout.pos.row = 4, layout.pos.col = 4:6))
+  print(StormPathHistPlotList[[1]], vp = viewport(layout.pos.row = 1, layout.pos.col = 1:3))
+  print(StormPathHistPlotList[[2]], vp = viewport(layout.pos.row = 1, layout.pos.col = 4:6))
+  print(StormPathHistPlotList[[3]], vp = viewport(layout.pos.row = 2, layout.pos.col = 1:3))
+  print(StormPathHistPlotList[[4]], vp = viewport(layout.pos.row = 2, layout.pos.col = 4:6))
+  print(StormPathHistPlotList[[5]], vp = viewport(layout.pos.row = 3, layout.pos.col = 1:3))
+  print(StormPathHistPlotList[[6]], vp = viewport(layout.pos.row = 3, layout.pos.col = 4:6))
+  print(StormPathHistPlotList[[7]], vp = viewport(layout.pos.row = 4, layout.pos.col = 1:3))
+  print(StormPathHistPlotList[[8]], vp = viewport(layout.pos.row = 4, layout.pos.col = 4:6))
   dev.off()
 }

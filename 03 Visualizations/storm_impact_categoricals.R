@@ -37,7 +37,7 @@ for (i in names(StormImpact.df)) {
 
 # Create png for StormImpact plots
 if (length(StormImpactPointPlotList) > 0) {
-  png("./00 Doc/StormImpactCategoricals.png", width = 25, height = 25, units = "in", res = 72)
+  png("../00 Doc/StormImpactCategoricals.png", width = 25, height = 25, units = "in", res = 72)
   grid.newpage()
   pushViewport(viewport(layout = grid.layout(1, 6)))   
   print(StormImpactPointPlotList[[1]], vp = viewport(layout.pos.row = 1, layout.pos.col = 1:6))
@@ -46,9 +46,9 @@ if (length(StormImpactPointPlotList) > 0) {
 }
 
 if (length(StormImpactHistPlotList) > 0){
-  png("./00 Doc/StormImpactMeasurables.png", width = 15, height = 15, units = "in", res = 72)
+  png("../00 Doc/StormImpactMeasurables.png", width = 15, height = 15, units = "in", res = 72)
   grid.newpage()
-  pushViewport(viewport(layout = grid.layout(2, 6)))   
+  pushViewport(viewport(layout = grid.layout(3, 6)))   
   print(StormImpactHistPlotList[[1]], vp = viewport(layout.pos.row = 1, layout.pos.col = 1:6))
   print(StormImpactHistPlotList[[2]], vp = viewport(layout.pos.row = 2, layout.pos.col = 1:2))
   print(StormImpactHistPlotList[[3]], vp = viewport(layout.pos.row = 2, layout.pos.col = 3:4))
