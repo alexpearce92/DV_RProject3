@@ -100,7 +100,7 @@ source("../01 Data/create_categoricals.R",echo=TRUE)
 
 ## Create characterization and generate png file for each table
 
-Notice that StormImpact does not generate any categorical plots because it only contains numerical columns
+Notice that StormImpact does not generate any categorical plots because it only contains measureable columns
 ```{r message=FALSE}
 source("../03 Visualizations/storm_impact_categoricals.R",echo=TRUE)
 source("../03 Visualizations/storm_meta_categoricals.R",echo=TRUE)
@@ -110,7 +110,12 @@ source("../03 Visualizations/storm_path_categoricals.R",echo=TRUE)
 ## And here are the png files that we created
 
 ### StormPath Categoricals
+![](./StormPathMeasurables.png)
 ![](./StormPathCategoricals.png)
 
 ### StormMeta Categoricals
+![](./StormMetaMeasurables.png)
 ![](./StormMetaCategoricals.png)
+
+### StormImpact Categoricals
+![](./StormImpactMeasurables.png)
