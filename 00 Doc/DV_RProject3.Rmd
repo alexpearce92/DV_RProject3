@@ -1,7 +1,7 @@
 ---
 output: html_document
 ---
-Elements Of Data Visualization: Project 3, Sattelite Analysis
+Elements Of Data Visualization: Project 3, Storm Analysis
 ===
 
 ***
@@ -10,7 +10,7 @@ __By Jose Cortez, Adam Hernandex, and Alex Pearce__
 
 __GitHub__: https://github.com/alexpearce92/DV_RProject3
 
-This project deals with creating interesting graphs concerning climactic weather in the US in 2010, the data of which was gathered and compiled by [Enigma](https://app.enigma.io/search/source/us.gov.noaa.ncdc.stormevents). Included are three datasets that were joined to form a single large data frame: satellite payload, satellite launch information, and satellite national origin.
+This project deals with creating interesting graphs concerning climactic weather in the US from 2000-2010, the data of which was gathered and compiled by [Enigma](https://app.enigma.io/search/source/us.gov.noaa.ncdc.stormevents). Included are three datasets that involve different characteristics of US storms. StormMeta contains meta information such as storm name, date of occurance, and state of occurance. StormPath contains information about the storm's major forcasting organization, magnitude, and geographical path (where available). StormImpact contains information about the storm's damage to property/crops, deaths, and injuries. Together, these three datasets contain information of around 610,000 storm events.
 
 ## Load necessary packages
 ```{r message=FALSE}
@@ -105,7 +105,7 @@ source("../01 Data/create_categoricals.R",echo=TRUE)
 
 ## Create characterization and generate png file for each table
 
-Notice that StormImpact does not generate any categorical plots because it only contains numerical columns
+Notice that StormImpact does not generate any categorical plots because it only contains measureable columns
 ```{r message=FALSE}
 source("../03 Visualizations/storm_impact_categoricals.R",echo=TRUE)
 source("../03 Visualizations/storm_meta_categoricals.R",echo=TRUE)
@@ -115,7 +115,12 @@ source("../03 Visualizations/storm_path_categoricals.R",echo=TRUE)
 ## And here are the png files that we created
 
 ### StormPath Categoricals
+![](./StormPathMeasurables.png)
 ![](./StormPathCategoricals.png)
 
 ### StormMeta Categoricals
+![](./StormMetaMeasurables.png)
 ![](./StormMetaCategoricals.png)
+
+### StormImpact Categoricals
+![](./StormImpactMeasurables.png)
